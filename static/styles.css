@@ -1,0 +1,160 @@
+/* Basic styles for header and footer */
+header, footer {
+    background-color: #FFA500; /* Orange background color */
+    color: #fff;
+    padding: 10px 20px;
+}
+
+/* Styles for navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFA500; /* Orange background color */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: #FF8C00; /* Darker orange for button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search-bar {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    margin-right: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar-left, .navbar-right {
+        margin-bottom: 10px;
+    }
+
+    .login-btn {
+        margin-right: 0;
+    }
+
+    .search-bar {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Styles for sliding menu */
+.sliding-menu {
+    display: none;
+    width: 250px;
+    height: 100%;
+    background-color: #FFA500; /* Orange background color */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.show-menu {
+    display: block;
+}
+
+.hamburger-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.menu-title {
+    font-size: 24px; /* Increase the font size */
+    margin-bottom: 10px;
+}
+
+.category-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 5px;
+}
+
+.category-list li a {
+    display: block;
+    padding: 10px;
+    background-color: #FFA500; /* Orange background color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px; /* Increase the font size */
+}
+
+.category-list li a:hover {
+    background-color: #FF8C00; /* Darker orange on hover */
+}
+
+/* Set unvisited link color to white */
+.category-list li a:link {
+    color: #fff;
+}
+
+/* Set visited link color to white */
+.category-list li a:visited {
+    color: #fff;
+}
+.settings-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}

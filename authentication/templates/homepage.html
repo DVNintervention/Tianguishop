@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.product {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.product-overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-overlay-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+</style>
+<h1>Welcome to Our Marketplace</h1>
+<div class="products-grid">
+    {% for product in products %}
+    <div class="product" style="background-image: url('{% static product.images.first.image.url %}');">
+        <div class="product-overlay-top">
+            <span class="product-title">{{ product.title }}</span>
+        </div>
+        <div class="product-overlay-bottom">
+            <span class="product-price">${{ product.price }}</span>
+        </div>
+    </div>
+    {% empty %}
+    <p>No products available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

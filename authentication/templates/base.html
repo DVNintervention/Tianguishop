@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="{% static 'js/common.js' %}"></script>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="navbar-left">
+            <button class="hamburger-btn">&#9776;</button>
+            <a href="/" class="logo">Tianguishop</a>
+        </div>
+        <div class="navbar-right">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <a href="{% url 'login' %}" class="login-btn">Login</a>
+
+        </div>
+    </div>
+<div class="sliding-menu">
+    <button class="close-btn">&times;</button>
+    <a href="{% url 'accessibility_settings' %}" class="settings-btn">&#9881;</a> <!-- Settings button -->
+    <h2 class="menu-title">Categories</h2>
+    <ul class="category-list">
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Furniture</a></li>
+        <li><a href="#">Toys</a></li>
+        <li><a href="#">Audio</a></li>
+        <li><a href="#">Cars & Accesories</a></li>
+        <li><a href="#">Food</a></li>
+        <li><a href="#">Toys</a></li>
+
+
+
+        <!-- Add more categories as needed -->
+    </ul>
+
+</div>
+
+    
+</header>
+
+<main>
+    <!-- Main content of each page will go here -->
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <!-- Footer content goes here -->
+    <p>&copy; 2024 Tianguishop. All rights reserved.</p>
+
+</footer> 
+
+</body>
+</html>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var hamburgerBtn = document.querySelector('.hamburger-btn');
+    var slidingMenu = document.querySelector('.sliding-menu');
+    var closeBtn = document.querySelector('.close-btn');
+
+    hamburgerBtn.addEventListener('click', function () {
+        slidingMenu.classList.toggle('show-menu');
+    });
+
+    closeBtn.addEventListener('click', function () {
+        slidingMenu.classList.remove('show-menu');
+    });
+});
+
+
+
+</script>
